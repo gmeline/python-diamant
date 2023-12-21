@@ -1,6 +1,7 @@
 alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def diamond(lettre):
+    lettre=lettre.upper()
     nb=0
     previus = 1
     buffer = ''
