@@ -25,9 +25,15 @@ jobs:
     - name: Set up Python 3.11
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.11'
         add-path: false
 
-    - name: Run unit tests
+    - name: Run unit tests with Python 3.11
+      run: |
+        python -m pytest tests/unit
+      if: matrix.python-version == '3.11'
+
+    - name: Run unit tests with other Python versions
       run: |
         pytest tests/unit
+      if: matrix.python-version != '3.11'
