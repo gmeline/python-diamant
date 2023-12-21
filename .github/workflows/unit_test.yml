@@ -18,6 +18,16 @@ jobs:
       with:
         python-version: '3.8'
 
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        source $HOME/.poetry/env
+        poetry --version
+
+    - name: Install dependencies with Poetry
+      run: |
+        poetry install
+
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
