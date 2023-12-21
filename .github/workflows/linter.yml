@@ -13,3 +13,11 @@ jobs:
       - uses: cschleiden/actions-linter@v1
         with:
           workflows: '[".github/workflows/*.yaml"]'
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          source $HOME/.poetry/env
+          poetry --version
+      - name: Install dependencies with Poetry
+        run: |
+          poetry install
