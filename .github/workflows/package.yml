@@ -1,1 +1,36 @@
+name: Package
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' 
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          source $HOME/.poetry/env
+          poetry --version
+
+      - name: Install dependencies with Poetry
+        run: |
+          poetry install
+
+      - name: Build and publish package
+        run: |
+          poetry build
+          poetry publish --repository test.pypi.org 
+        env:
+          POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
