@@ -20,6 +20,17 @@ jobs:
           poetry run bandit -r .
         continue-on-error: false
 
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="$HOME/.poetry/bin:$PATH"
+          poetry --version
+
+      - name: Install dependencies
+        run: |
+          poetry install
+        continue-on-error: false
+
       - name: Unit Tests
         run: |
           poetry run pytest tests/unit
