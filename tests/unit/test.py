@@ -1,14 +1,15 @@
 import unittest
-from diamond.diamond import diamond
+from Diamond.diamond import diamond
 
-class TestDiamond (unittest.TestCase):
-  def test_valeur_minim(self):
-    result = diamond('A')
-    self.assertEqual(result,'A')
+class TestDiamond(unittest.TestCase):
+    def test_valeur_minim(self):
+        result = diamond('A')
+        self.assertEqual(result.strip(), 'A')
 
-  def test_valeur_minim(self):
-    result = diamond('Z')
-    self.assertEqual(result,'''                         A
+    def test_valeur_maxim(self):
+        result = diamond('Z')
+        expected_result = '''
+                         A
                         B B
                        C   C
                       D     D
@@ -58,17 +59,24 @@ Z                                                 Z
                       D     D
                        C   C
                         B B
-                         A''')
-  def test_valeur_exemple(self):
-    result = diamond('C')
-    self.assertEqual(result,'''  A
+                         A
+        '''
+        self.assertEqual(result.strip(), expected_result.strip())
+
+    def test_valeur_exemple(self):
+        result = diamond('C')
+        expected_result = '''
+  A
  B B
 C   C
  B B
-  A''')
-  def test_valeur_minuscule(self):
-    result = diamond('a')
-    self.assertEqual(result,'A')
+  A
+        '''
+        self.assertEqual(result.strip(), expected_result.strip())
+
+    def test_valeur_minuscule(self):
+        result = diamond('a')
+        self.assertEqual(result.strip(), 'A')
 
 if __name__ == '__main__':
     unittest.main()
