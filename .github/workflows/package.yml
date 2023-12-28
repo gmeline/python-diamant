@@ -1,9 +1,7 @@
 name: Package
 
 on:
-  push:
-    branches:
-      - main
+  fork
 
 jobs:
   package:
