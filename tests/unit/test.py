@@ -7,6 +7,7 @@ class TestDiamond(unittest.TestCase):
         result = diamond('A')
         self.assertEqual(result.strip(), 'A')
 
+    
     def test_valeur_maxim(self):
         result = diamond('Z')
         expected_result = '''
@@ -64,6 +65,7 @@ Z                                                 Z
         '''
         self.assertEqual(result.strip(), expected_result.strip())
 
+    
     def test_valeur_exemple(self):
         result = diamond('C')
         expected_result = '''
@@ -75,6 +77,7 @@ C   C
         '''
         self.assertEqual(result.strip(), expected_result.strip())
 
+    
     def test_valeur_minuscule(self):
         result = diamond('a')
         self.assertEqual(result.strip(), 'A')
