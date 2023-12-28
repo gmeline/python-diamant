@@ -12,3 +12,12 @@ python -m unittest tests/tests.py ou py -m unittest tests.py
 En ajoutant -v a la commande cela affiche les résultats de chaque test en détail :
 
 python -m unittest tests/tests.py -v ou py -m unittest tests/tests.py -v
+
+Installation de poetry :
+
+pipx install poetry
+python3 -m pipx ensurepath
+
+Installation des dépendances :
+
+poetry install
