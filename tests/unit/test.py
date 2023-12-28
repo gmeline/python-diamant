@@ -1,6 +1,7 @@
 import unittest
 from Diamond.diamond import diamond
 
+
 class TestDiamond(unittest.TestCase):
     def test_valeur_minim(self):
         result = diamond('A')
@@ -77,6 +78,7 @@ C   C
     def test_valeur_minuscule(self):
         result = diamond('a')
         self.assertEqual(result.strip(), 'A')
+
 
 if __name__ == '__main__':
     unittest.main()
