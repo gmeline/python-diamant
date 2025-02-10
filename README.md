@@ -1,23 +1,51 @@
-# Diamond-ExamenFinal
+💎 Diamond Generator
 
-Int-gration-continue et scripting | Diamant
+📌 Description
 
-Ce projet a été réalisé par : Max Locmant, Méline Godefroy, Thibaut Ringeval
-Procédure de lancement des tests unitaires :
+Ce projet est un script Python qui génère un diamant en ASCII en fonction d'une lettre donnée. La lettre sert de point culminant du diamant, avec les lettres précédentes de l'alphabet formant la structure symétrique.
+_________________
+🛠️ Fonctionnalités
 
-Pour exécuter les tests unitaires dans le projet Diamond, vous devez vous rendre dans le répertoire du projet à partir de la ligne de commande et exécuter la commande suivante :
+✅ Génération d'un diamant en fonction d'une lettre majuscule de A à Z.
 
-python -m unittest tests/tests.py ou py -m unittest tests.py
+✅ Structure centrée et symétrique.
 
-En ajoutant -v a la commande cela affiche les résultats de chaque test en détail :
+✅ Affichage du résultat dans le terminal.
+_________________
+🚀 Installation et utilisation
 
-python -m unittest tests/tests.py -v ou py -m unittest tests/tests.py -v
+1️⃣ Prérequis
 
-Installation de poetry :
+Python 3 installé sur votre machine.
 
-pipx install poetry
-python3 -m pipx ensurepath
+2️⃣ Installation
 
-Installation des dépendances :
+Clonez le projet :
 
-poetry install
+git clone https://github.com/gmeline/python-Diamond-ExamenFinal.git
+
+cd python-Diamond-ExamenFinal
+
+3️⃣ Utilisation
+
+Exécutez le script en ligne de commande en spécifiant une lettre :
+
+python diamond.py
+
+Par défaut, le script utilise la lettre 'C'. Vous pouvez modifier cet argument dans le code en changeant :
+
+diamond('C')
+
+ou en adaptant le script pour prendre une entrée utilisateur :
+
+letter = input("Entrez une lettre : ")
+
+diamond(letter)
+_________________
+🛠️ Explication du Code
+
+Le script fonctionne en deux étapes :
+
+Il construit la première moitié du diamant en ajoutant des espaces et les lettres appropriées.
+
+Il génère ensuite la seconde moitié en inversant la première partie.
